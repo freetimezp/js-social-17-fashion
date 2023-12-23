@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 
-function HeroSwiper({ slides }) {
+function HeroSwiper({ slides, slideChange }) {
     return (
         <Swiper
             slidesPerView={1}
@@ -33,7 +33,7 @@ function HeroSwiper({ slides }) {
         >
             {slides.map((slide) => (
                 <SwiperSlide key={slide._id}>
-                    <img src={slide.bgImg} alt="slide" />
+                    <img src={slide.bgImg} alt="slide" onClick={() => slideChange(slide._id)} />
                 </SwiperSlide>
             ))}
         </Swiper>

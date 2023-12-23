@@ -9,6 +9,18 @@ function Hero() {
     const { items, setItems } = useContext(AppContext);
     //console.log(items, 'I here');
 
+    const handleSlideChange = (id) => {
+        //console.log(id);
+        const newItems = items.map((item) => {
+            item.active = false;
+            if (item._id === id) {
+                item.active = true;
+            }
+            return item;
+        });
+        setItems(newItems);
+    };
+
     return (
         <div className='banner'>
             {items && items.length > 0 && items.map((item) => (
@@ -34,7 +46,7 @@ function Hero() {
             ))}
 
             {items && items.length > 0 && (
-                <HeroSwiper slides={items} />
+                <HeroSwiper slides={items} slideChange={handleSlideChange} />
             )}
         </div>
     );
