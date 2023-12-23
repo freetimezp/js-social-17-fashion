@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 import { AppContext } from '../App';
@@ -29,9 +30,9 @@ function Hero() {
                     <div className={`content ${item.active ? 'active' : undefined}`}>
                         <p>{item.subtitle}</p>
                         <h1>{item.title}</h1>
-                        <a href="#" className="mainButton">
+                        <Link to={`/items/${item._id}`} className="mainButton">
                             Shop Now <i className="bi bi-cart2"></i>
-                        </a>
+                        </Link>
                         <a href="#" className="markButton">
                             <i className="bi bi-bookmark-plus-fill"></i>
                         </a>

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
 
 import Header from './components/Header';
 import Home from './pages/Home';
+import ItemDetails from './pages/ItemDetails';
 
 export const AppContext = React.createContext();
 
@@ -28,7 +30,11 @@ function App() {
     <>
       <AppContext.Provider value={{ items, setItems }}>
         <Header />
-        <Home />
+
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/items/:id" element={<ItemDetails />} />
+        </Routes>
       </AppContext.Provider>
     </>
   );

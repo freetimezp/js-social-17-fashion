@@ -10,7 +10,7 @@ function Header() {
 
     return (
         <header>
-            <a href="#" className="logo">
+            <a href="/" className="logo">
                 Fashion
             </a>
 
