@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import './Hero.css';
 
 import { AppContext } from '../App';
+import HeroSwiper from './HeroSwiper';
 
 function Hero() {
     const { items, setItems } = useContext(AppContext);
@@ -31,6 +32,10 @@ function Hero() {
                     </div>
                 </div>
             ))}
+
+            {items && items.length > 0 && (
+                <HeroSwiper slides={items} />
+            )}
         </div>
     );
 };
