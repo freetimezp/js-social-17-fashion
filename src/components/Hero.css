@@ -154,6 +154,11 @@
     font-size: 60px;
 }
 
+.banner .content .markButton.active i,
+.banner .content .markButton:hover i {
+    color: var(--primary);
+}
+
 .banner .subtitle {
     width: 42vw;
     z-index: 1000;

@@ -14,9 +14,9 @@ function Header() {
 
     return (
         <header>
-            <a href="/" className="logo">
+            <Link to="/" className="logo">
                 Fashion
-            </a>
+            </Link>
 
             <ul className="nav">
                 {navList.map((nav) => (

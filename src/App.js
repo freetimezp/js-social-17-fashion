@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import ItemDetails from './pages/ItemDetails';
 import Bag from './pages/Bag';
+import Collection from './pages/Collection';
 
 export const AppContext = React.createContext();
 
@@ -38,6 +39,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/items/:id" element={<ItemDetails />} />
           <Route exact path="/bag" element={<Bag />} />
+          <Route exact path="/collection" element={<Collection />} />
         </Routes>
       </AppContext.Provider>
     </>

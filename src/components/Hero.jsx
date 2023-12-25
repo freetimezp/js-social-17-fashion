@@ -7,7 +7,7 @@ import { AppContext } from '../App';
 import HeroSwiper from './HeroSwiper';
 
 function Hero() {
-    const { items, setItems } = useContext(AppContext);
+    const { items, setItems, collection, setCollection } = useContext(AppContext);
     //console.log(items, 'I here');
 
     const handleSlideChange = (id) => {
@@ -22,6 +22,14 @@ function Hero() {
         setItems(newItems);
     };
 
+    const handleAddToCollection = (prod) => {
+        setCollection([...collection, prod]);
+    };
+
+    const handleRemoveFromCollection = (prod) => {
+        setCollection(collection.filter(item => item._id !== prod._id));
+    };
+
     return (
         <div className='banner'>
             {items && items.length > 0 && items.map((item) => (
@@ -33,9 +41,15 @@ function Hero() {
                         <Link to={`/items/${item._id}`} className="mainButton">
                             Shop Now <i className="bi bi-cart2"></i>
                         </Link>
-                        <a href="#" className="markButton">
+                        <Link
+                            className={`markButton ${collection.includes(item) ? 'active' : undefined}`}
+                            onClick={collection.includes(item)
+                                ? () => handleRemoveFromCollection(item)
+                                : () => handleAddToCollection(item)
+                            }
+                        >
                             <i className="bi bi-bookmark-plus-fill"></i>
-                        </a>
+                        </Link>
                     </div>
                     <div className="subtitle">
                         <span className="slogan">Spring & Summer Collections</span>
