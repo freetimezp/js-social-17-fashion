@@ -6,6 +6,7 @@ import './ItemDetails.css';
 import { AppContext } from '../App';
 
 function ItemDetails() {
+    const { bag, setBag } = useContext(AppContext);
     const { id } = useParams();
     const [item, setItem] = useState({});
     const index = parseInt(id) - 1;
@@ -90,6 +91,8 @@ function ItemDetails() {
 
     const handleAddToBag = (item) => {
         //console.log(item);
+        if (bag.includes(item)) return;
+        setBag([...bag, item]);
     };
 
     return (

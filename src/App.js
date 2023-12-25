@@ -7,11 +7,14 @@ import './App.css';
 import Header from './components/Header';
 import Home from './pages/Home';
 import ItemDetails from './pages/ItemDetails';
+import Bag from './pages/Bag';
 
 export const AppContext = React.createContext();
 
 function App() {
   const [items, setItems] = useState([]);
+  const [bag, setBag] = useState([]);
+  const [collection, setCollection] = useState([]);
 
   const fetchData = () => {
     fetch('http://localhost:4000/items')
@@ -28,12 +31,13 @@ function App() {
 
   return (
     <>
-      <AppContext.Provider value={{ items, setItems }}>
+      <AppContext.Provider value={{ items, setItems, bag, setBag, collection, setCollection }}>
         <Header />
 
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/items/:id" element={<ItemDetails />} />
+          <Route exact path="/bag" element={<Bag />} />
         </Routes>
       </AppContext.Provider>
     </>

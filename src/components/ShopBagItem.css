@@ -1,0 +1,32 @@
+.table .shopBagItem {
+    background: var(--bgColor);
+    color: #fff;
+}
+
+.table {
+    --bs-table-bg: var(--bgColor);
+}
+
+.table .shopBagItem th,
+.table .shopBagItem td {
+    color: #fff;
+}
+
+.table .shopBagItem td:last-child {
+    text-align: center;
+}
+
+.table .shopBagItem td a {
+    color: red;
+    font-size: 1.5rem;
+}
+
+.shopBagItem td img {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    border-radius: 10px;
+
+}
