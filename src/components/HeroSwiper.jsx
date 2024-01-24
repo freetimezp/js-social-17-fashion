@@ -9,10 +9,6 @@ function HeroSwiper({ slides, slideChange }) {
         <Swiper
             slidesPerView={1}
             spaceBetween={10}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false
-            }}
             breakpoints={{
                 640: {
                     slidesPerView: 2,
