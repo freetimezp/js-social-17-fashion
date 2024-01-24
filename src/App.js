@@ -18,7 +18,7 @@ function App() {
   const [collection, setCollection] = useState([]);
 
   const fetchData = () => {
-    fetch('http://localhost:4000/items')
+    fetch('https://christmas-04.onrender.com/items')
       .then(res => res.json())
       .then(data => setItems(data))
       .catch(err => console.log(err.message));
